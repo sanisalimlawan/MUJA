@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using muja.entity;
 
 namespace muja.Data
 {
@@ -9,5 +11,13 @@ namespace muja.Data
         {
             
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Desination> Desinations { get; set; }
+        public DbSet<LeaveType> LeaveTypes { get; set; }
+        public DbSet<Leave> Leaves { get; set; }
     }
 }
